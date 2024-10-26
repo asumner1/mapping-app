@@ -55,6 +55,9 @@ def clean_location(loc):
 
 df['Location'] = df['Location'].apply(clean_location)
 
+df['Latitude'] = df.apply(lambda x: float(x['Location'].split(',')[0]), axis=1)
+df['Longitude'] = df.apply(lambda x: float(x['Location'].split(',')[1]), axis=1)
+
 # Print the resulting dataframe
 print(df.to_string())
 
