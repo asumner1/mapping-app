@@ -6,15 +6,38 @@ from .easybutton import JsButton
 # Create your views here.
 def index(request):
     # Read the CSV file
-    df = pd.read_csv('mappingtool/cleaned_parks_table.csv')
+    df = pd.read_csv('mappingtool/combined_parks_data.csv')
     
     # Create a map centered on the world
     # m = folium.Map(location=[df['Latitude'].mean(), df['Longitude'].mean()], zoom_start=3, tiles="Esri WorldTopoMap")
     m = folium.Map(location=[36.66841891894786, -117.68554687500001], zoom_start=3, tiles="Esri WorldTopoMap")
 
+    # Add OpenTopoMap as an additional tile layer
+    folium.TileLayer(tiles="OpenTopoMap", show=False).add_to(m)
+    # Add layer control
+    folium.LayerControl().add_to(m)
+
     # Add pins for each park
     for index, row in df.iterrows():
         lat, long = row['Latitude'], row['Longitude']
+        
+        # Create formatted HTML for the popup
+        popup_html = f"""
+        <div style="width: 200px;">
+            <h4 style="color: #2c5a2e; margin-bottom: 5px;"><strong>{row['Name']}</strong></h4>
+            <hr style="border: 1px solid #2c5a2e; margin: 5px 0;">
+            <p>{row['Description']}<br>
+            Latitude: {lat:.4f}<br>
+            Longitude: {long:.4f}</p>
+            <a href="{row['AllTrails URL']}" target="_blank" class="ui button tiny green" 
+               style="background-color: #2c5a2e; color: white; text-decoration: none; 
+                      padding: 5px 10px; border-radius: 4px; display: inline-block; 
+                      margin-top: 5px;">
+                View Top Trails on AllTrails
+            </a>
+            <br>
+        </div>
+        """
         
         # Create a custom icon for each marker
         custom_icon = folium.CustomIcon(
@@ -24,7 +47,7 @@ def index(request):
         
         folium.Marker(
             location=[lat, long],
-            popup=row['Name'],
+            popup=folium.Popup(popup_html, max_width=300),
             tooltip=row['Name'],
             icon=custom_icon
         ).add_to(m)
@@ -41,7 +64,6 @@ def index(request):
             map.setView([36.66841891894786, -117.68554687500001], 3);
         }
         """).add_to(m)
-
 
     # Convert the map to HTML and add a border
     map_html = m._repr_html_()
