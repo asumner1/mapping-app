@@ -35,10 +35,37 @@ def index(request):
                       margin-top: 5px;">
                 View Top Trails on AllTrails
             </a>
-            <br>
-        </div>
         """
+
+        # Handle multiple map links if Map Type contains 'Multiple'
+        if 'Multiple' in str(row['Map Type']):
+            map_urls = row['Map Link'].split(' | ')
+            popup_html += """
+            <div style='margin-top: 10px;'>
+                <h5 style='color: #2c5a2e; margin-bottom: 5px;'>Official Park Maps:</h5>
+            """
+            for i, url in enumerate(map_urls, 1):
+                popup_html += f"""
+                <a href="{url}" target="_blank" class="ui button tiny green" 
+                   style="background-color: #2c5a2e; color: white; text-decoration: none; 
+                          padding: 5px 10px; border-radius: 4px; display: inline-block; 
+                          margin-top: 5px; margin-right: 5px;">
+                    Park Map {i}
+                </a>
+                """
+            popup_html += "</div>"
+        else:
+            popup_html += f"""
+            <a href="{row['Map Link']}" target="_blank" class="ui button tiny green" 
+               style="background-color: #2c5a2e; color: white; text-decoration: none; 
+                      padding: 5px 10px; border-radius: 4px; display: inline-block; 
+                      margin-top: 5px;">
+                View Official Park Map
+            </a>
+            """
         
+        popup_html += "</div>"
+
         # Create a custom icon for each marker
         custom_icon = folium.CustomIcon(
             icon_image='mappingtool/NPS-Icon-PNG-3.png',

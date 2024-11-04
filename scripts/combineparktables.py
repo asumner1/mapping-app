@@ -5,6 +5,7 @@ from fuzzywuzzy import process
 # Read the CSV files
 parks_with_urls = pd.read_csv('scripts/us_national_parks_with_urls.csv')
 cleaned_parks = pd.read_csv('scripts/cleaned_parks_table.csv')
+park_maps = pd.read_csv('scripts/park_maps.csv')
 
 def combine_descriptions(row):
     """Combine descriptions from both sources, avoiding redundancy."""
@@ -64,6 +65,31 @@ final_df = final_df.rename(columns={
     'Recreation visitors (2022)[11]': 'Annual_Visitors',
     'Combined_Description': 'Description'
 })
+
+# Create a mapping dictionary for park_maps using fuzzy matching
+map_mapping = {}
+for park_name in park_maps['Park Name']:
+    match = process.extractOne(park_name, final_df['Name'], scorer=fuzz.ratio)
+    if match[1] >= 80:  # Only match if similarity score is 80 or higher
+        map_mapping[park_name] = match[0]
+
+# Create a mapping series for park_maps
+map_mapping_series = pd.Series(map_mapping)
+
+# Map the names to match final_df format
+park_maps['Matched_Name'] = park_maps['Park Name'].map(map_mapping_series)
+
+# Merge final_df with park_maps
+final_df = pd.merge(
+    final_df,
+    park_maps[['Matched_Name', 'Map Link', 'Map Type']],
+    left_on='Name',
+    right_on='Matched_Name',
+    how='left'
+)
+
+# Drop the redundant Matched_Name column
+final_df = final_df.drop('Matched_Name', axis=1)
 
 # Save to CSV
 final_df.to_csv('scripts/combined_parks_data.csv', index=False)
