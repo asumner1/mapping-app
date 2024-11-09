@@ -7,6 +7,7 @@
     <title>{% block title %}Mapping App{% endblock %}</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
             font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -35,6 +36,15 @@
         }
         .ui.menu .active.item {
             background-color: #1e3d20 !important;
+        }
+        th.sorted.ascending:after {
+            content: "↑";
+        }
+        th.sorted.descending:after {
+            content: "↓";
+        }
+        th[data-sort="checkmark"] {
+            cursor: pointer;
         }
     </style>
 </head>

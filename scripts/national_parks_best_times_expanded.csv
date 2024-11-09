@@ -1,0 +1,64 @@
+National Park,Reason,January,February,March,April,May,June,July,August,September,October,November,December
+Acadia,"Fall foliage, cooler temperatures, fewer crowds.",False,False,False,False,False,False,False,False,True,True,False,False
+American Samoa,"Dry season, ideal for snorkeling and beach activities.",False,False,False,False,False,True,True,True,True,False,False,False
+Arches,"Mild temperatures for hiking, fewer crowds.",False,False,False,True,True,False,False,False,True,True,False,False
+Badlands,"Cooler weather, wildflowers in spring, beautiful fall scenery.",False,False,False,False,True,True,False,False,True,False,False,False
+Big Bend,"Comfortable temperatures, spring wildflowers, pleasant fall weather.",False,False,True,True,False,False,False,False,False,True,True,False
+Biscayne,Dry season with lower humidity and fewer mosquitoes; ideal for snorkeling.,True,True,True,True,False,False,False,False,False,False,False,True
+Black Canyon of the Gunnison,"Mild weather, less rain, good for stargazing.",False,False,False,False,True,True,False,False,True,False,False,False
+Bryce Canyon,"Cooler temperatures, fewer crowds.",False,False,False,True,True,False,False,False,True,True,False,False
+Canyonlands,Manageable temperatures for hiking and exploring.,False,False,False,True,True,False,False,False,True,True,False,False
+Capitol Reef,Mild weather and colorful landscapes.,False,False,False,False,True,True,False,False,True,False,False,False
+Carlsbad Caverns,"Cooler temperatures and fewer crowds, pleasant for cave exploration.",True,True,True,True,False,False,False,False,False,True,True,True
+Channel Islands,"Wildflowers in spring, clear skies and warmer ocean in fall.",False,False,True,True,True,False,False,False,True,True,True,False
+Congaree,"Fewer bugs, mild temperatures, fall foliage, and spring wildflowers.",False,False,True,True,True,False,False,False,False,True,True,False
+Crater Lake,"Trails are accessible, and clear water views.",False,False,False,False,False,False,True,True,True,False,False,False
+Cuyahoga Valley,"Vibrant fall colors, pleasant weather, and fewer crowds.",False,False,False,False,False,False,False,False,True,True,False,False
+Death Valley,"Cooler temperatures for hiking, clear skies for stargazing.",True,True,True,False,False,False,False,False,False,False,True,True
+Denali,"Best wildlife viewing, open park access, and extended daylight hours.",False,False,False,False,False,True,True,True,True,False,False,False
+Dry Tortugas,"Dry season with calm waters, ideal for snorkeling and beach activities.",True,True,True,True,False,False,False,False,False,False,False,True
+Everglades,Dry season reduces humidity and mosquitoes; better wildlife spotting.,True,True,True,True,False,False,False,False,False,False,False,True
+Gates of the Arctic,Summer brings the most accessible weather in this remote park.,False,False,False,False,False,False,True,True,False,False,False,False
+Gateway Arch,"Pleasant weather, fewer crowds.",False,False,False,True,True,True,False,False,True,True,False,False
+Glacier,"Trails and roads are accessible, with ideal hiking weather.",False,False,False,False,False,False,True,True,True,False,False,False
+Glacier Bay,"Peak whale watching, glacier calving, and long daylight hours.",False,False,False,False,False,True,True,True,False,False,False,False
+Grand Canyon,"Avoid summer heat, with fewer crowds and pleasant weather.",False,False,True,True,True,False,False,False,True,True,True,False
+Grand Teton,"Great for hiking, boating, and wildlife viewing with snow-free trails.",False,False,False,False,False,True,True,True,True,False,False,False
+Great Basin,"Warm temperatures, snow-free trails in the high desert.",False,False,False,False,False,True,True,True,True,False,False,False
+Great Sand Dunes,"Comfortable temperatures for sand activities, with summer thunderstorms.",False,False,False,False,True,True,True,True,True,False,False,False
+Great Smoky Mountains,"Spring wildflowers, fall foliage, and comfortable weather.",False,False,False,True,True,False,False,False,True,True,False,False
+Guadalupe Mountains,Fall colors and cooler temperatures make hiking enjoyable.,False,False,False,False,False,False,False,False,False,True,True,False
+Haleakalā,"Clear skies, mild temperatures, ideal for sunrise and sunset.",False,False,True,True,True,False,False,False,True,True,True,False
+Hawaiʻi Volcanoes,Best for volcanic activity and hiking in mild weather.,False,False,False,True,True,True,True,True,True,True,False,False
+Hot Springs,Pleasant temperatures for exploring bathhouses and trails.,False,False,True,True,True,False,False,False,True,True,True,False
+Indiana Dunes,"Warm weather for beach activities, fewer bugs.",False,False,False,False,True,True,True,True,True,False,False,False
+Isle Royale,"Mild weather, ferry service, fewer bugs.",False,False,False,False,False,True,True,True,True,False,False,False
+Joshua Tree,"Cooler temperatures, fewer crowds, and spring wildflowers.",False,False,True,True,False,False,False,False,False,True,True,False
+Katmai,"Best bear viewing, salmon runs, and mild weather.",False,False,False,False,False,False,True,True,True,False,False,False
+Kenai Fjords,"Ideal for glacier tours, kayaking, and wildlife viewing.",False,False,False,False,False,True,True,True,False,False,False,False
+Kings Canyon,"Snow-free trails, mild temperatures, scenic views.",False,False,False,False,False,False,True,True,True,False,False,False
+Kobuk Valley,Most accessible weather for summer activities.,False,False,False,False,False,True,True,True,False,False,False,False
+Lake Clark,"Ideal for bear and salmon viewing, warm weather.",False,False,False,False,False,True,True,True,False,False,False,False
+Lassen Volcanic,"Open trails, wildflowers, and geothermal features accessible.",False,False,False,False,False,False,True,True,True,False,False,False
+Mammoth Cave,"Cooler weather, fewer crowds, stable cave temperatures year-round.",False,False,False,True,True,False,False,False,True,True,False,False
+Mesa Verde,"Best access to ancient dwellings, mild temperatures, full facilities.",False,False,False,False,True,True,True,True,True,False,False,False
+Mount Rainier,"Snow-free trails, wildflowers, and open facilities.",False,False,False,False,False,False,True,True,False,False,False,False
+New River Gorge,"Fall foliage, comfortable weather, rock climbing.",False,False,False,False,False,False,False,False,True,True,False,False
+North Cascades,"Snow-free trails, mild weather, and wildflowers.",False,False,False,False,False,False,True,True,True,False,False,False
+Olympic,"Ideal for hiking, beachcombing, and mountain views.",False,False,False,False,False,False,True,True,True,False,False,False
+Petrified Forest,"Cooler weather, scenic desert landscapes.",False,False,True,True,True,False,False,False,False,True,True,False
+Pinnacles,"Mild weather for hiking, birdwatching, and caving.",False,False,True,True,True,False,False,False,True,True,True,False
+Redwood,"Least rain, with full trail access and scenic views.",False,False,False,False,True,True,True,True,True,False,False,False
+Rocky Mountain,"Snow-free trails, wildflowers, wildlife viewing.",False,False,False,False,False,True,True,True,True,False,False,False
+Saguaro,"Mild weather, spring cactus blooms, fewer crowds.",False,False,True,True,False,False,False,False,False,True,True,False
+Sequoia,"Full trail access, pleasant temperatures for hiking.",False,False,False,False,False,False,True,True,True,False,False,False
+Shenandoah,"Spring wildflowers, fall foliage, comfortable temperatures.",False,False,False,True,True,False,False,False,True,True,False,False
+Theodore Roosevelt,"Warm weather, full trail access, excellent wildlife viewing.",False,False,False,False,False,True,True,True,True,False,False,False
+Virgin Islands,"Dry season, calm waters for snorkeling, warm temperatures.",True,True,True,True,False,False,False,False,False,False,False,True
+Voyageurs,"Warm weather, fewer mosquitoes, excellent for boating.",False,False,False,False,False,True,True,True,True,False,False,False
+White Sands,Cooler temperatures for exploring the dunes.,True,True,True,False,False,False,False,False,False,True,True,True
+Wind Cave,"Fall colors, cool weather, fewer crowds for cave tours.",False,False,False,False,False,False,False,False,True,True,False,False
+Wrangell–St. Elias,"Most accessible time for hiking, with long daylight hours.",False,False,False,False,False,False,True,True,False,False,False,False
+Yellowstone,"Fewer crowds, wildlife activity, and open trails.",False,False,False,False,True,True,False,False,True,True,False,False
+Yosemite,"Waterfalls, hiking, manageable crowds.",False,False,False,False,True,True,False,False,True,False,False,False
+Zion,"Comfortable hiking temperatures, fewer crowds.",False,False,True,True,True,False,False,False,True,True,True,False

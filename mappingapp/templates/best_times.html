@@ -90,5 +90,95 @@
             </div>
         </div>
     </div>
+
+    <div class="ui segments">
+        <div class="ui segment">
+            <h2 class="ui header">
+                <i class="table icon"></i>
+                <div class="content">
+                    Park-Specific Visit Times
+                    <div class="sub header">Detailed monthly guide for each national park</div>
+                </div>
+            </h2>
+        </div>
+
+        <div class="ui segment" style="overflow-x: auto;">
+            <table class="ui celled sortable table">
+                <thead>
+                    <tr>
+                        <th class="sorted ascending">National Park</th>
+                        <th>Reason</th>
+                        <th data-sort-type="checkmark">Jan</th>
+                        <th data-sort-type="checkmark">Feb</th>
+                        <th data-sort-type="checkmark">Mar</th>
+                        <th data-sort-type="checkmark">Apr</th>
+                        <th data-sort-type="checkmark">May</th>
+                        <th data-sort-type="checkmark">Jun</th>
+                        <th data-sort-type="checkmark">Jul</th>
+                        <th data-sort-type="checkmark">Aug</th>
+                        <th data-sort-type="checkmark">Sep</th>
+                        <th data-sort-type="checkmark">Oct</th>
+                        <th data-sort-type="checkmark">Nov</th>
+                        <th data-sort-type="checkmark">Dec</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for park in parks_data %}
+                    <tr>
+                        <td>{{ park.National_Park }}</td>
+                        <td>{{ park.Reason }}</td>
+                        <td class="center aligned">{% if park.January %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.February %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.March %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.April %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.May %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.June %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.July %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.August %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.September %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.October %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.November %}✓{% endif %}</td>
+                        <td class="center aligned">{% if park.December %}✓{% endif %}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+<script src="https://semantic-ui.com/javascript/library/tablesort.js"></script>
+<script>
+// First, ensure the tablesort plugin is available
+if (typeof $.tablesort === 'undefined') {
+    console.error('Tablesort plugin not loaded');
+}
+
+$(document).ready(function() {
+    // Initialize table sorting with custom sorting for checkmark columns
+    $('.ui.sortable.table').tablesort();
+    
+    // Add custom sort for month columns
+    $('th[data-sort-type="checkmark"]').data('sortBy', function(th, td, tablesort) {
+        // Reverse the sort order - empty cells will be treated as "higher" than cells with checkmarks
+        return td.text() === '' ? 1 : 0;
+    });
+
+    // Add hover class for visual feedback
+    $('.ui.sortable.table th').hover(
+        function() { $(this).addClass('hover'); },
+        function() { $(this).removeClass('hover'); }
+    );
+});
+</script>
+
+<style>
+.ui.table th.hover {
+    background: rgba(0,0,0,.05) !important;
+}
+
+.ui.table td.center.aligned {
+    color: #21ba45;  /* Semantic UI's green color */
+    font-weight: bold;
+}
+</style>
 {% endblock %} 

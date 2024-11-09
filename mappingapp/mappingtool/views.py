@@ -105,4 +105,13 @@ def support(request):
     return render(request, 'support.html')
 
 def best_times(request):
-    return render(request, 'best_times.html')
+    # Read the CSV file
+    df = pd.read_csv('mappingtool/national_parks_best_times_expanded.csv')
+    
+    # Rename the column to remove space
+    df = df.rename(columns={'National Park': 'National_Park'})
+    
+    # Convert DataFrame to list of dictionaries for template
+    parks_data = df.to_dict('records')
+    
+    return render(request, 'best_times.html', {'parks_data': parks_data})
