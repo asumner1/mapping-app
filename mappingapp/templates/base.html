@@ -4,18 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapping App</title>
+    <title>{% block title %}Mapping App{% endblock %}</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <style>
+        body {
+            font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .ui.menu {
+            margin: 0;
+            border-radius: 0;
+            background-color: #2c5a2e;
+        }
+        .ui.menu .item {
+            color: white !important;
+        }
+        .ui.menu .item:hover {
+            background-color: #1e3d20 !important;
+        }
+        .ui.menu .active.item {
+            background-color: #1e3d20 !important;
+        }
+    </style>
 </head>
 
 <body>
-    <div style="margin-top: 50px;" class="ui container">
-        <h1 class="ui center aligned header">Mapping App</h1>
-
-        
+    <!-- Navigation Bar -->
+    <div class="ui menu">
+        <div class="ui container">
+            <a href="{% url 'index' %}" class="item {% if request.path == '/' %}active{% endif %}">
+                <i class="map icon"></i> National Parks Map
+            </a>
+            <a href="{% url 'best_times' %}" class="item {% if request.path == '/best-times/' %}active{% endif %}">
+                <i class="calendar icon"></i> Best Times to Visit
+            </a>
+            <a href="{% url 'support' %}" class="item {% if request.path == '/support/' %}active{% endif %}">
+                <i class="heart icon"></i> Support Us
+            </a>
+        </div>
     </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
 </body>
 
 </html>

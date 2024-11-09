@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Best Times to Visit - National Parks Map{% endblock %}
+
+{% block content %}
+<div class="ui container">
+    <h1 class="ui header">Best Times to Visit National Parks</h1>
+    
+    <div class="ui segments">
+        <div class="ui segment">
+            <h2 class="ui header">
+                <i class="calendar icon"></i>
+                <div class="content">
+                    Seasonal Guide
+                    <div class="sub header">When to visit based on weather and crowds</div>
+                </div>
+            </h2>
+        </div>
+
+        <div class="ui segment">
+            <div class="ui four stackable cards">
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Spring (March-May)</div>
+                        <div class="description">
+                            <ul class="ui list">
+                                <li>Moderate temperatures</li>
+                                <li>Wildflower blooms</li>
+                                <li>Fewer crowds</li>
+                                <li>Some snow at higher elevations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Summer (June-August)</div>
+                        <div class="description">
+                            <ul class="ui list">
+                                <li>Peak season</li>
+                                <li>Warmest temperatures</li>
+                                <li>All facilities open</li>
+                                <li>Largest crowds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Fall (September-November)</div>
+                        <div class="description">
+                            <ul class="ui list">
+                                <li>Fall colors</li>
+                                <li>Mild temperatures</li>
+                                <li>Fewer crowds</li>
+                                <li>Some facility closures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="content">
+                        <div class="header">Winter (December-February)</div>
+                        <div class="description">
+                            <ul class="ui list">
+                                <li>Snow activities</li>
+                                <li>Lowest crowds</li>
+                                <li>Limited access</li>
+                                <li>Many facility closures</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui segment">
+            <h3 class="ui header">
+                <i class="lightbulb icon"></i>
+                Tips for Any Season
+            </h3>
+            <div class="ui bulleted list">
+                <div class="item">Make reservations well in advance for popular parks</div>
+                <div class="item">Check park alerts and conditions before visiting</div>
+                <div class="item">Visit during weekdays to avoid crowds</div>
+                <div class="item">Consider shoulder seasons for popular destinations</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

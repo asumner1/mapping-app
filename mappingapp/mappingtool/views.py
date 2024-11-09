@@ -23,10 +23,10 @@ def index(request):
         
         # Create formatted HTML for the popup
         popup_html = f"""
-        <div style="width: 200px;">
+        <div style="width: 340px;">
             <h4 style="color: #2c5a2e; margin-bottom: 5px;"><strong>{row['Name']}</strong></h4>
             <hr style="border: 1px solid #2c5a2e; margin: 5px 0;">
-            <p>{row['Description']}<br>
+            <p style="max-height: 200px; overflow-y: auto;">{row['Description']}<br>
             Latitude: {lat:.4f}<br>
             Longitude: {long:.4f}</p>
             <a href="{row['AllTrails URL']}" target="_blank" class="ui button tiny green" 
@@ -74,7 +74,7 @@ def index(request):
         
         folium.Marker(
             location=[lat, long],
-            popup=folium.Popup(popup_html, max_width=300),
+            popup=folium.Popup(popup_html, max_width=400),
             tooltip=row['Name'],
             icon=custom_icon
         ).add_to(m)
@@ -88,6 +88,7 @@ def index(request):
         function="""
         function(btn, map) {
             //console.log(map.getCenter());
+            map.closePopup();
             map.setView([36.66841891894786, -117.68554687500001], 3);
         }
         """).add_to(m)
@@ -99,3 +100,9 @@ def index(request):
     # Pass the map HTML to the template
     context = {'map': map_html}
     return render(request, 'index.html', context)
+
+def support(request):
+    return render(request, 'support.html')
+
+def best_times(request):
+    return render(request, 'best_times.html')
