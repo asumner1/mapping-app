@@ -11,6 +11,9 @@ beautifulsoup4 = "*"
 pandas = "*"
 lxml = "*"
 fuzzywuzzy = "*"
+l = "*"
+django-allauth = {extras = ["socialaccount"], version = "*"}
+python-decouple = "*"
 
 [dev-packages]
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 import folium
 import pandas as pd
 from .easybutton import JsButton
-
+from decouple import config
 # Create your views here.
 def index(request):
     # Read the CSV file
@@ -27,6 +27,7 @@ def index(request):
             <h4 style="color: #2c5a2e; margin-bottom: 5px;"><strong>{row['Name']}</strong></h4>
             <hr style="border: 1px solid #2c5a2e; margin: 5px 0;">
             <p style="max-height: 200px; overflow-y: auto;">{row['Description']}<br>
+            Test: {config('TEST_VAR')}<br>
             Latitude: {lat:.4f}<br>
             Longitude: {long:.4f}</p>
             <a href="{row['AllTrails URL']}" target="_blank" class="ui button tiny green" 
