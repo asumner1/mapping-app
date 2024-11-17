@@ -33,8 +33,20 @@ GOOGLE_CLIENT_SECRET = config('GOOGLE_CLIENT_SECRET')
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# Application definition
+# Redirect URLs after login/logout
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
+# Optional: Simplify login/signup flow
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
+# Optional: Social account settings
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

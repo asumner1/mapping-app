@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - National Parks Map{% endblock %}
+
+{% load socialaccount %}
+{% block content %}
+<div class="ui container">
+    <div class="ui middle aligned center aligned grid" style="margin-top: 5rem;">
+        <div class="column" style="max-width: 450px;">
+            <h2 class="ui green header">
+                <div class="content">
+                    Log in to your account
+                </div>
+            </h2>
+            
+            <form class="ui large form" method="POST" action="{% url 'account_login' %}">
+                {% csrf_token %}
+                <div class="ui stacked segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="email" name="login" placeholder="Email address">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <button class="ui fluid large green submit button" type="submit">Login</button>
+                </div>
+
+                {% if form.errors %}
+                <div class="ui error message">
+                    <p>Invalid email or password.</p>
+                </div>
+                {% endif %}
+            </form>
+
+            <div class="ui divider"></div>
+            {% providers_media_js %}
+            <div class="ui segment">
+                <a href="{% provider_login_url 'google' %}" class="ui fluid google plus button">
+                    <i class="google icon"></i>
+                    Login with Google
+                </a>
+            </div>
+
+            <div class="ui message">
+                New user? <a href="{% url 'account_signup' %}">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
