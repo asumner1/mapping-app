@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#5_1yk&b21c6bev26zj4*thme03()luaee7psjvt77or3(4hoi
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mapping-app-37v3.onrender.com']
 
 GOOGLE_CLIENT_ID = config('GOOGLE_CLIENT_ID')
 GOOGLE_CLIENT_SECRET = config('GOOGLE_CLIENT_SECRET')
